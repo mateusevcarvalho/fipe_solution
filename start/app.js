@@ -58,6 +58,7 @@ const aliases = {}
 */
 const commands = [
   'App/Commands/IncluirFipe',
+  'App/Commands/AtualizarFipe',
 ]
 
 console.log = function (msg, ...options) {
