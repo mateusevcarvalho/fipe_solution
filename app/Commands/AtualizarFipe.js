@@ -114,7 +114,7 @@ class AtualizarFipe extends Command {
               });
             } else {
               precosAtualizados++;
-              let updateBancoModelo = await bancoAnoModelo.findOrFail(bancoAnoModelo.id);
+              let updateBancoModelo = await ObjAnoModelo.findOrFail(bancoAnoModelo.id);
               updateBancoModelo.merge({
                 valor: parseFloat(todosParametros.Valor.replace('R$ ', '').replace('.', '').replace(',', '.')),
                 referencia: todosParametros.MesReferencia,
@@ -128,7 +128,7 @@ class AtualizarFipe extends Command {
     }
 
     this.info(`Resultado final: novas referêcias(${novasReferencias}), novas marcas(${novasMarcas}), novos modelos(${novosModelos}), preços atualizados(${precosAtualizados}) e preços incluidos(${precosIncluidos})`)
-    this.success(`${this.icon('success')} Inclusão tabela ano modelos concluída.`);
+    this.success(`${this.icon('success')} Atualização tabela ano modelos concluída.`);
     Database.close()
   }
 }
